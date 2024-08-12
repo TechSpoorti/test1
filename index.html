@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Attendance</title>
+  </head>
+  <body style="background-color: #f0f1f2">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+      <div class="container-fluid d-flex justify-content-center">
+        <span class="navbar-brand mb-0 h1 fs-2">Attendance Form</span>
+      </div>
+    </nav>
+    <!-- NavbarEnd -->
+
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-body">
+          <p class="text-center">Update the shiftwise daily attendance. Update the attendance within 0630, 1430, and 2230 hrs with one site selfie.</p>
+          <div th:if="${message}" class="alert alert-success" role="alert">
+            <p th:text="${message}"></p>
+          </div>
+          
+          <form th:action="@{/attendance-submit}" method="post">
+            <!-- Date -->
+            <div class="form-group">
+              <label for="date">Date <span class="text-danger">*</span></label>
+              <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+
+            <!-- Shift Duty -->
+            <div class="form-group">
+              <label for="shiftDuty">Shift Duty <span class="text-danger">*</span></label>
+              <select class="form-control" id="shiftDuty" name="shift_duty" required>
+                <option value="">Choose</option>
+                <option value="Morning Shift">Morning Shift</option>
+                <option value="Afternoon Shift">Afternoon Shift</option>
+                <option value="Night Shift">Night Shift</option>
+              </select>
+            </div>
+
+            <!-- Supervisor -->
+            <div class="form-group">
+              <label for="supervisor">Supervisor <span class="text-danger">*</span></label>
+              <select class="form-control" id="supervisor" name="supervisor" required>
+                <option value="">Choose</option>
+                <option value="Supervisor 1">Supervisor 1</option>
+                <option value="Supervisor 2">Supervisor 2</option>
+                <option value="Supervisor 3">Supervisor 3</option>
+              </select>
+            </div>
+
+            <!-- Feeder Sampling -->
+            <div class="form-group">
+              <label for="feederSampling">FEEDER SAMPLING</label>
+              <div class="d-flex d-flex-col">
+                <select class="form-control m-1" name="feeder_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+                <select class="form-control m-1" name="feeder_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+                <select class="form-control m-1" name="feeder_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+                <select class="form-control m-1" name="feeder_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+                <select class="form-control m-1" name="feeder_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+                <select class="form-control m-1" name="feeder_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Belt Sampling -->
+            <div class="form-group">
+              <label for="beltSampling">BELT SAMPLING</label>
+              <div class="d-flex d-flex-col">
+                <select class="form-control m-2" name="belt_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+                <select class="form-control m-2" name="belt_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+                <select class="form-control m-2" name="belt_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+                <select class="form-control m-2" name="belt_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+                <select class="form-control m-2" name="belt_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Ash Sampling -->
+            <div class="form-group">
+              <label for="ashSampling">ASH SAMPLING</label>
+              <div class="d-flex d-flex-col">
+                <select class="form-control m-1" name="ash_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+                <select class="form-control m-1" name="ash_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- PC Sampling -->
+            <div class="form-group">
+              <label for="pcSampling">PC SAMPLING</label>
+              <div class="d-flex d-flex-col">
+                <select class="form-control m-1" name="pc_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+                <select class="form-control m-1" name="pc_sampling[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="form-group">
+              <label for="additionalInfo">Additional Info</label>
+              <input type="text" class="form-control" id="additionalInfo" name="additional_info" placeholder="Type additional information here">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-0evHe/X+R7qZJ6Q8XfrTYn0NT+6T2hp5zUnx60W57l5K3T2rF9D3y4CZJ5P0K4R2" crossorigin="anonymous"></script>
+  </body>
+</html>
