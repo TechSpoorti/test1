@@ -12,7 +12,7 @@
   </head>
   <body style="background-color: #f0f1f2">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#F7B733">
       <div class="container-fluid d-flex justify-content-center">
         <span class="navbar-brand mb-0 h1 fs-2">Attendance Form</span>
       </div>
@@ -39,9 +39,10 @@
               <label for="shiftDuty">Shift Duty <span class="text-danger">*</span></label>
               <select class="form-control" id="shiftDuty" name="shift_duty" required>
                 <option value="">Choose</option>
-                <option value="Morning Shift">Morning Shift</option>
-                <option value="Afternoon Shift">Afternoon Shift</option>
+                <option value="Morning Shift">Day Shift</option>
+                <option value="Afternoon Shift">Evening Shift</option>
                 <option value="Night Shift">Night Shift</option>
+                <option value="Night Shift">General Shift</option>
               </select>
             </div>
 
@@ -55,11 +56,14 @@
                 <option value="Supervisor 3">Supervisor 3</option>
               </select>
             </div>
-
+            <div>
+            <div class="container my-2" style="background-color:#FF8A65;">
+<span class="fs-4 d-flex justify-content-center" style="color: white">Site work</span></div>
             <!-- Feeder Sampling -->
             <div class="form-group">
-              <label for="feederSampling">FEEDER SAMPLING</label>
-              <div class="d-flex d-flex-col">
+<label for="feederSampling" style="color: #FF8A65; font-size: 18px;">Feeder Sampling Workers</label>
+
+              <div >
                 <select class="form-control m-1" name="feeder_sampling[]">
                   <option value="">Choose</option>
                   <option value="Option 1">Option 1</option>
@@ -101,8 +105,8 @@
 
             <!-- Belt Sampling -->
             <div class="form-group">
-              <label for="beltSampling">BELT SAMPLING</label>
-              <div class="d-flex d-flex-col">
+              <label for="beltSampling" style="color: #FF8A65; font-size: 18px">Belt Sampling Workers</label>
+              <div >
                 <select class="form-control m-2" name="belt_sampling[]">
                   <option value="">Choose</option>
                   <option value="Option 1">Option 1</option>
@@ -138,7 +142,7 @@
 
             <!-- Ash Sampling -->
             <div class="form-group">
-              <label for="ashSampling">ASH SAMPLING</label>
+              <label for="ashSampling" style="color: #FF8A65; font-size: 18px">Ash Sampling workers</label>
               <div class="d-flex d-flex-col">
                 <select class="form-control m-1" name="ash_sampling[]">
                   <option value="">Choose</option>
@@ -154,10 +158,31 @@
                 </select>
               </div>
             </div>
-
+            </div>
+            
+            <div>
+            <div class="container" style="background-color:#00BFFF"><span class=" fs-4 d-flex justify-content-center" style="color:white">Flue Analysis Laboraty</span></div>
+              <!-- Chemist Sampling -->
+            <div class="form-group">
+              <label for="chemist" style="color: #00BFFF; font-size: 18px">Chemist </label>
+              <div class="d-flex d-flex-col">
+                <select class="form-control m-1" name="chemist[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+                <select class="form-control m-1" name="chemist[]">
+                  <option value="">Choose</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+              </div>
+            </div>
             <!-- PC Sampling -->
             <div class="form-group">
-              <label for="pcSampling">PC SAMPLING</label>
+              <label for="pcSampling"style="color: #00BFFF; font-size: 18px">Pc Sampling Sampling Workers</label>
               <div class="d-flex d-flex-col">
                 <select class="form-control m-1" name="pc_sampling[]">
                   <option value="">Choose</option>
@@ -172,6 +197,7 @@
                   <option value="Option 3">Option 3</option>
                 </select>
               </div>
+            </div>
             </div>
 
             <!-- Additional Info -->
@@ -180,7 +206,7 @@
               <input type="text" class="form-control" id="additionalInfo" name="additional_info" placeholder="Type additional information here">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn  my-2 btn-md" style="background-color:#4169E1;color:white">Submit</button>
           </form>
         </div>
       </div>
