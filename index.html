@@ -37,12 +37,12 @@
             <!-- Shift Duty -->
             <div class="form-group">
               <label for="shiftDuty">Shift Duty <span class="text-danger">*</span></label>
-              <select class="form-control" id="shiftDuty" name="shift_duty" required>
+              <select class="form-control" id="shiftDuty" name="shift_duty" required onchange="toggleSections()">
                 <option value="">Choose</option>
                 <option value="Morning Shift">Day Shift</option>
                 <option value="Afternoon Shift">Evening Shift</option>
                 <option value="Night Shift">Night Shift</option>
-                <option value="Night Shift">General Shift</option>
+                <option value="General Shift">General Shift</option>
               </select>
             </div>
 
@@ -56,148 +56,85 @@
                 <option value="Supervisor 3">Supervisor 3</option>
               </select>
             </div>
-            <div>
-            <div class="container my-2" style="background-color:#FF8A65;">
-<span class="fs-4 d-flex justify-content-center" style="color: white">Site work</span></div>
-            <!-- Feeder Sampling -->
-            <div class="form-group">
-<label for="feederSampling" style="color: #FF8A65; font-size: 18px;">Feeder Sampling Workers</label>
 
-              <div >
-                <select class="form-control m-1" name="feeder_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-                <select class="form-control m-1" name="feeder_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-                <select class="form-control m-1" name="feeder_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-                <select class="form-control m-1" name="feeder_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-                <select class="form-control m-1" name="feeder_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-                <select class="form-control m-1" name="feeder_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
+            <div id="siteWorkSection" style="display: none;">
+              <div class="container my-2" style="background-color:#FF8A65;">
+                <span class="fs-4 d-flex justify-content-center" style="color: white">Site work</span>
+              </div>
+              <!-- Feeder Sampling -->
+              <div class="form-group">
+                <label for="feederSampling" style="color: #FF8A65; font-size: 18px;">Feeder Sampling Workers</label>
+                <div>
+                  <select class="form-control m-1" name="feeder_sampling[]">
+                    <option value="">Choose</option>
+                    <option value="Option 1">Option 1</option>
+                    <option value="Option 2">Option 2</option>
+                    <option value="Option 3">Option 3</option>
+                  </select>
+                  <!-- Additional select elements as needed -->
+                </div>
+              </div>
+
+              <!-- Belt Sampling -->
+              <div class="form-group">
+                <label for="beltSampling" style="color: #FF8A65; font-size: 18px">Belt Sampling Workers</label>
+                <div>
+                  <select class="form-control m-2" name="belt_sampling[]">
+                    <option value="">Choose</option>
+                    <option value="Option 1">Option 1</option>
+                    <option value="Option 2">Option 2</option>
+                    <option value="Option 3">Option 3</option>
+                  </select>
+                  <!-- Additional select elements as needed -->
+                </div>
+              </div>
+
+              <!-- Ash Sampling -->
+              <div class="form-group">
+                <label for="ashSampling" style="color: #FF8A65; font-size: 18px">Ash Sampling Workers</label>
+                <div class="d-flex d-flex-col">
+                  <select class="form-control m-1" name="ash_sampling[]">
+                    <option value="">Choose</option>
+                    <option value="Option 1">Option 1</option>
+                    <option value="Option 2">Option 2</option>
+                    <option value="Option 3">Option 3</option>
+                  </select>
+                  <!-- Additional select elements as needed -->
+                </div>
               </div>
             </div>
 
-            <!-- Belt Sampling -->
-            <div class="form-group">
-              <label for="beltSampling" style="color: #FF8A65; font-size: 18px">Belt Sampling Workers</label>
-              <div >
-                <select class="form-control m-2" name="belt_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-                <select class="form-control m-2" name="belt_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-                <select class="form-control m-2" name="belt_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-                <select class="form-control m-2" name="belt_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-                <select class="form-control m-2" name="belt_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
+            <div id="flueAnalysisSection" style="display: none;">
+              <div class="container" style="background-color:#00BFFF">
+                <span class="fs-4 d-flex justify-content-center" style="color:white">Flue Analysis Laboratory</span>
               </div>
-            </div>
-
-            <!-- Ash Sampling -->
-            <div class="form-group">
-              <label for="ashSampling" style="color: #FF8A65; font-size: 18px">Ash Sampling workers</label>
-              <div class="d-flex d-flex-col">
-                <select class="form-control m-1" name="ash_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-                <select class="form-control m-1" name="ash_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-              </div>
-            </div>
-            </div>
-            
-            <div>
-            <div class="container" style="background-color:#00BFFF"><span class=" fs-4 d-flex justify-content-center" style="color:white">Flue Analysis Laboraty</span></div>
               <!-- Chemist Sampling -->
-            <div class="form-group">
-              <label for="chemist" style="color: #00BFFF; font-size: 18px">Chemist </label>
-              <div class="d-flex d-flex-col">
-                <select class="form-control m-1" name="chemist[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-                <select class="form-control m-1" name="chemist[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
+              <div class="form-group">
+                <label for="chemist" style="color: #00BFFF; font-size: 18px">Chemist</label>
+                <div class="d-flex d-flex-col">
+                  <select class="form-control m-1" name="chemist[]">
+                    <option value="">Choose</option>
+                    <option value="Option 1">Option 1</option>
+                    <option value="Option 2">Option 2</option>
+                    <option value="Option 3">Option 3</option>
+                  </select>
+                  <!-- Additional select elements as needed -->
+                </div>
               </div>
-            </div>
-            <!-- PC Sampling -->
-            <div class="form-group">
-              <label for="pcSampling"style="color: #00BFFF; font-size: 18px">Pc Sampling Sampling Workers</label>
-              <div class="d-flex d-flex-col">
-                <select class="form-control m-1" name="pc_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-                <select class="form-control m-1" name="pc_sampling[]">
-                  <option value="">Choose</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
+
+              <!-- PC Sampling -->
+              <div class="form-group">
+                <label for="pcSampling" style="color: #00BFFF; font-size: 18px">PC Sampling Workers</label>
+                <div class="d-flex d-flex-col">
+                  <select class="form-control m-1" name="pc_sampling[]">
+                    <option value="">Choose</option>
+                    <option value="Option 1">Option 1</option>
+                    <option value="Option 2">Option 2</option>
+                    <option value="Option 3">Option 3</option>
+                  </select>
+                  <!-- Additional select elements as needed -->
+                </div>
               </div>
-            </div>
             </div>
 
             <!-- Additional Info -->
@@ -206,7 +143,7 @@
               <input type="text" class="form-control" id="additionalInfo" name="additional_info" placeholder="Type additional information here">
             </div>
 
-            <button type="submit" class="btn  my-2 btn-md" style="background-color:#4169E1;color:white">Submit</button>
+            <button type="submit" class="btn my-2 btn-md" style="background-color:#4169E1;color:white">Submit</button>
           </form>
         </div>
       </div>
@@ -214,5 +151,22 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-0evHe/X+R7qZJ6Q8XfrTYn0NT+6T2hp5zUnx60W57l5K3T2rF9D3y4CZJ5P0K4R2" crossorigin="anonymous"></script>
+    
+    <!-- Custom Script -->
+    <script>
+      function toggleSections() {
+        var shiftDuty = document.getElementById('shiftDuty').value;
+        var siteWorkSection = document.getElementById('siteWorkSection');
+        var flueAnalysisSection = document.getElementById('flueAnalysisSection');
+
+        if (shiftDuty === 'General Shift') {
+          siteWorkSection.style.display = 'none';
+          flueAnalysisSection.style.display = 'block';
+        } else {
+          siteWorkSection.style.display = 'block';
+          flueAnalysisSection.style.display = 'none';
+        }
+      }
+    </script>
   </body>
 </html>
